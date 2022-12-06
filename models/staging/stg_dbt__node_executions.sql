@@ -44,7 +44,7 @@ fields as (
 surrogate_key as (
 
     select
-        {{ dbt_utils.surrogate_key(['fields.command_invocation_id', 'fields.node_id']) }} as node_execution_id,
+        {{ dbt_utils.generate_surrogate_key(['fields.command_invocation_id', 'fields.node_id']) }} as node_execution_id,
         fields.command_invocation_id,
         fields.dbt_cloud_run_id,
         fields.artifact_run_id,

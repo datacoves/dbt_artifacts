@@ -54,7 +54,7 @@ unioned as (
 surrogate_key as (
 
     select
-        {{ dbt_utils.surrogate_key(['command_invocation_id', 'node_id']) }} as manifest_node_id,
+        {{ dbt_utils.generate_surrogate_key(['command_invocation_id', 'node_id']) }} as manifest_node_id,
         command_invocation_id,
         dbt_cloud_run_id,
         artifact_run_id,
